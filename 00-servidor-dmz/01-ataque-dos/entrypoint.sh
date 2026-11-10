@@ -1,1 +1,0 @@
-#scritp temporal
