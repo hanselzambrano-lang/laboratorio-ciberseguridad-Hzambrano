@@ -1,14 +1,13 @@
 #!/bin/sh
 
-HOST="servidor-web-dmz.onrender.com"
+echo "=== INICIANDO SERVICIO COMPROMETIDO EN LA CADENA DE SUMINISTRO ==="
+echo "Verificando integridad del contenedor..."
 
-echo "=== INICIANDO ESCANEO DE PUERTOS Y RECONOCIMIENTO EN LA DMZ ==="
-echo "Analizando puertos comunes sobre $HOST..."
-
-for port in 21 22 80 443 8080 3306; do
-  nc -zv -w 2 $HOST $port 2>&1
-done
-
-echo "=== ESCANEO DE PUERTOS FINALIZADO ==="
+if [ -f "/app/malicious_dependency.sh" ]; then
+  echo "[ALERTA DE SEGURIDAD] Se ha detectado una dependencia no autorizada inyectada durante la construcción del artefacto."
+  sh /app/malicious_dependency.sh
+else
+  echo "[OK] Artefacto limpio."
+fi
 
 python3 -m http.server 8080
