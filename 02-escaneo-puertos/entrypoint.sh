@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST="servidor-web-dmz.onrender.com"
+HOST="servidor-web-dmz-hzambrano.onrender.com/"
 
 echo "=== INICIANDO ESCANEO DE PUERTOS Y RECONOCIMIENTO EN LA DMZ ==="
 echo "Analizando puertos comunes sobre $HOST..."
