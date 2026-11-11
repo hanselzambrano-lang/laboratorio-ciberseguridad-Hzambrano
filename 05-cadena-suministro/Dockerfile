@@ -1,8 +1,12 @@
 FROM alpine:latest
 
-RUN apk add --no-cache netcat-openbsd python3 bind-tools
+RUN apk add --no-cache curl python3
 
 WORKDIR /app
+
+# Inyección simulada durante el build
+RUN echo "echo '[PAYLOAD ADVERSARIO] Dependencia maliciosa ejecutándose con privilegios del contenedor...'" > /app/malicious_dependency.sh && \
+    chmod +x /app/malicious_dependency.sh
 
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
