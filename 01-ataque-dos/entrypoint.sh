@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TARGET="[https://servidor-web-dmz.onrender.com](https://servidor-web-dmz.onrender.com)"
+TARGET="https://servidor-web-dmz-hzambrano.onrender.com"
 
 echo "=== SIMULACIÓN: GENERANDO TRÁFICO MASIVO HTTP ==="
 echo "Enviando ráfaga de peticiones concurrentes a $TARGET..."
